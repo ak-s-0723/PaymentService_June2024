@@ -8,7 +8,11 @@ public class PaymentGatewayChooserStrategy {
     @Autowired
     private RazorpayPaymentGateway razorpayPaymentGateway;
 
+    @Autowired
+    private StripePaymentGateway stripePaymentGateway;
+
     public PaymentGateway getOptimalPaymentGateway() {
-        return razorpayPaymentGateway;
+        //Add logic for random num generation and call stripe if num is even else call razorpay
+        return stripePaymentGateway;
     }
 }
